@@ -5,11 +5,11 @@ require_once "config/database.php";
 
 if (isset($_POST['simpan'])) {
 	// $id				= $_POST['id'];
-	$nama			= $_POST['nama'];
+	$nama			= strip_tags($_POST['nama']);
 	$jurusan		= $_POST['jurusan'];
 	$prodi			= $_POST['prodi'];
-	$no_telepon			= $_POST['no_telepon'];
-	$idline			= $_POST['idline'];
+	$no_telepon		= $_POST['no_telepon'];
+	$idline			= strip_tags($_POST['idline']);
 
 	// perintah query untuk menyimpan data ke tabel is_siswa
 	$query = mysqli_query($db,"INSERT INTO is_siswa(

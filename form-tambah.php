@@ -80,7 +80,7 @@
             <hr/>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                <input type="submit" class="btn btn-primary btn-submit" name="simpan" value="Simpan">
+                <input type="submit" class="btn btn-primary btn-submit" onclick="window.location.href='http://localhost/ppm/index.php?alert=2'"name="simpan" value="Simpan">
                 <a href="index.php" class="btn btn-default btn-reset">Batal</a>
               </div>
             </div>

@@ -102,13 +102,14 @@ require_once "config/database.php";
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
       </button>
-        <h5 class="modal-title" id="exampleModalLongTitle">Information</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Berhasil</h5>
       </div>
       <div class="modal-body">
-        Data berhasil disimpan!
+        Terimakasih sudah mendaftar!
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Oke</button>
+        <button type="button" class="btn btn-success" onclick="window.location.href='http://localhost/ppm/index.php'" data-dismiss="modal">Oke</button>
+        
       </div>
     </div>
   </div>
