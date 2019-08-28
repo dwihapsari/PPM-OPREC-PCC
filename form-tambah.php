@@ -10,7 +10,7 @@
       } else if (nama_jurusan=="Teknik Sipil") {
           document.getElementById("prodi").innerHTML="<option value='Teknik Perawatan dan Perbaikan Gedung (S.Tr)'>Teknik Perawatan dan Perbaikan Gedung (S.Tr)</option><option value='Perancangan Jalan dan Jembatan (S.Tr)'>Perancangan Jalan dan Jembatan (S.Tr)</option><option value='Konstruksi Gedung (D3)'>Konstruksi Gedung (D3)</option><option value='Konstruksi Sipil (D3)'>Konstruksi Sipil (D3)</option>";
       } else if (nama_jurusan=="Teknik Mesin") {
-          document.getElementById("prodi").innerHTML="<option value='Teknik Mesin Produksi dan Perawatan (S.Tr)'>Teknik Mesin Produksi dan Perawatan (S.Tr)</option><option value='Teknologi Rekayasa Pembangkit Energi (S.Tr)'>Teknologi Rekayasa Pembangkit Energi (S.Tr)</option><option value='Teknik Mesin (D3)'>Teknik Mesin (D3)</option><option value='Teknik Konversi Energi (D3)'>Teknik Konversi Energi (D3)</option><option value='Teknik Mesin(Konsentrasi Design and Tool Making Engineering) (D3)'>Teknik Mesin(Konsentrasi Design and Tool Making Engineering) (D3)</option>"
+          document.getElementById("prodi").innerHTML="<option value='Teknik Mesin Produksi dan Perawatan (S.Tr)'>Teknik Mesin Produksi dan Perawatan (S.Tr)</option><option value='Teknologi Rekayasa Pembangkit Energi (S.Tr)'>Teknologi Rekayasa Pembangkit Energi (S.Tr)</option><option value='Teknik Mesin (D3)'>Teknik Mesin (D3)</option><option value='Teknik Konversi Energi (D3)'>Teknik Konversi Energi (D3)</option>"
       } else if (nama_jurusan=="Akuntansi") {
           document.getElementById("prodi").innerHTML="<option value='Komputerisasi Akuntansi (S.Tr)'>Komputerisasi Akuntansi (S.Tr)</option><option value='Perbankan Syariah (S.Tr)'>Perbankan Syariah (S.Tr)</option><option value='Analis Keuangan (S.Tr)'>Analis Keuangan (S.Tr)</option><option value='Akuntansi Manajerial (S.Tr)'>Akuntansi Manajerial (S.Tr)</option><option value='Akuntansi (D3)'>Akuntansi (D3)</option><option value='Keuangan dan Perbankan (D3)'>Keuangan dan Perbankan (D3)</option>"
       } else if (nama_jurusan=="Administrasi Bisnis") {
@@ -66,7 +66,7 @@
             <div class="form-group">
               <label class="col-sm-2 control-label">No. Telepon</label>
               <div class="col-sm-2">
-                <input type="number" class="form-control" name="no_telepon" autocomplete="off" maxlength="12" onKeyPress="return goodchars(event,'0123456789',this)" required>
+                <input type="tel" class="form-control" name="no_telepon" autocomplete="off" maxlength="15" onKeyPress="return goodchars(event,'0123456789',this)" required>
               </div>
             </div>
             
