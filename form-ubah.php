@@ -1,7 +1,6 @@
-
 <script>
   function jrsProdi(){
-      var nama_jurusan=document.getElementById("form_tambah").jurusan.value;
+      var nama_jurusan=document.getElementById("form_ubah").jurusan.value;
       
       if (nama_jurusan=="") { 
           document.getElementById("prodi").innerHTML="<option value='' selected disabled>--Pilih Prodi--</option>";
@@ -24,20 +23,30 @@
       <div class="page-header">
         <h4>
           <i class="glyphicon glyphicon-edit"></i> 
-          Form Registration Polytechnic Computer Club
+          Ubah data anggota
         </h4>
       </div> <!-- /.page-header -->
-      
-      
+      <?php
+        if (isset($_GET['id'])) {
+          $id  = $_GET['id'];
+          $sql  = mysqli_query($db,"SELECT * FROM is_siswa WHERE id='$id'");
+          $data = mysqli_fetch_assoc($sql);
+        }
+      ?>
       <div class="panel panel-default">
         <div class="panel-body">
-          <form class="form-horizontal" method="POST" action="proses-simpan.php" id="form_tambah">
-            
+          <form class="form-horizontal" method="POST" action="proses-ubah.php" id="form_ubah">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">ID</label>
+              <div class="col-sm-2">
+                <input type="text" class="form-control" name="id" value="<?php echo $data['id']; ?>" readonly>
+              </div>
+            </div>
 
             <div class="form-group">
               <label class="col-sm-2 control-label">Nama</label>
               <div class="col-sm-3">
-                <input type="text" class="form-control" name="nama" autocomplete="off" required>
+                <input type="text" class="form-control" name="nama" autocomplete="off" value="<?php echo $data['nama']; ?>" required>
               </div>
             </div>
             
@@ -45,7 +54,7 @@
               <label class="col-sm-2 control-label">Jurusan</label>
               <div class="col-sm-3">
                 <select class="form-control" name="jurusan" id="jurusan" onchange="jrsProdi()" placeholder="Pilih Jurusan" required>
-                  <option value="" selected disabled>--Pilih Jurusan--</option>
+                  <option value="<?= $data['jurusan'] ?>" selected hidden><?= $data['jurusan'] ?></option>
                   <option value="Teknik Mesin">Teknik Mesin</option>
                   <option value="Teknik Elektro">Teknik Elektro</option>
                   <option value="Teknik Sipil">Teknik Sipil</option>
@@ -58,7 +67,8 @@
             <div class="form-group">
               <label class="col-sm-2 control-label">Program Studi</label>
               <div class="col-sm-3">
-                <select class="form-control" name="prodi" id="prodi" placeholder="Pilih Program Studi" required>
+                <select class="form-control" name="prodi" id="prodi" required>
+                  <option value="<?= $data['prodi'] ?>"><?= $data['prodi'] ?></option>
                 </select>
               </div>
             </div>
@@ -66,17 +76,17 @@
             <div class="form-group">
               <label class="col-sm-2 control-label">No. Telepon</label>
               <div class="col-sm-2">
-                <input type="text" class="form-control" name="no_telepon" autocomplete="off" maxlength="13" onKeyPress="return goodchars(event,'0123456789',this)" required>
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label class="col-sm-2 control-label">ID Line</label>
-              <div class="col-sm-3">
-                <input type="text" placeholder = "Tanpa @" class="form-control" name="idline" autocomplete="off" required>
+                <input type="text" class="form-control" name="no_telepon" autocomplete="off" maxlength="13" onKeyPress="return goodchars(event,'0123456789',this)" value="<?php echo $data['no_telepon']; ?>" required>
               </div>
             </div>
 
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Id Line</label>
+              <div class="col-sm-3">
+                <input type="text" class="form-control" name="idline" autocomplete="off" value="<?php echo $data['idline']; ?>" required>
+              </div>
+            </div>
+            
             <hr/>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">

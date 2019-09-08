@@ -12,17 +12,12 @@ if (isset($_POST['simpan'])) {
 	$idline			= $_POST['idline'];
 
 	// perintah query untuk menyimpan data ke tabel is_siswa
-	$query = mysqli_query($db,"INSERT INTO is_siswa(
-											 	nama,
-												jurusan,
-												prodi,
-												no_telepon, 
-												idline)	
-										VALUES(	'$nama',
-												'$jurusan',
-												'$prodi',
-												'$no_telepon',
-												'$idline')");		
+	$query = mysqli_query($db,"UPDATE is_siswa set
+											 	nama = '$nama',
+												jurusan ='$jurusan',
+												prodi='$prodi',
+												no_telepon = '$no_telepon', 
+												idline='$idline' where id='$id'");
 
 	// cek hasil query
 	if ($query) {
